@@ -53,5 +53,10 @@
             "always"
         ],
         "class-methods-use-this": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "webpack": "webpack.config.js"
+        }
     }
 }

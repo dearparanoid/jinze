@@ -1,6 +1,7 @@
-
-
 import React, { Component } from 'react';
+
+import Header from 'header/Header';
+import 'style.scss';
 
 class Index extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class Index extends Component {
   }
 
   render() {
-    return (<h1> This is Home page</h1>);
+    return (<Header />);
   }
 }
 

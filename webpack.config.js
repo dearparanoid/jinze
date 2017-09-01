@@ -23,4 +23,11 @@ module.exports = {
             { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' }
         ]
     },
+    resolve: {
+        modules: [
+            path.resolve('./scss'),
+            path.resolve('./node_modules'),
+            path.resolve('./components')
+        ]
+    },
 }
