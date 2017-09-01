@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
     entry: ['babel-polyfill', './main.js'],
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: path.join(__dirname, 'build'),
         filename: 'bundle.js'
     },
     module: {
