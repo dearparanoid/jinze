@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import avatar from 'avatar.jpg';
 
-class Home extends Component {
+class About extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -9,11 +10,11 @@ class Home extends Component {
   }
   render() {
     return (
-      <div className="homeTitle">
-        <h1>Light Always</h1>
+      <div>
+        <img src={avatar} alt="Avatar" />
       </div>
     );
   }
 }
 
-export default Home;
+export default About;

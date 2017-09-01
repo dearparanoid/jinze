@@ -12,13 +12,17 @@ module.exports = {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loaders: 'eslint-loader',
-                enforce: 'pre'
+                enforce: 'pre',
+                options:{
+                    fix : 'true'
+                }
             },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 loaders: 'babel-loader',
             },
+            { test: /\.(png|jpg|gif)$/, loader: 'url-loader' },
             { test: /\.css$/, loader: 'style-loader!css-loader' },
             { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' }
         ]
@@ -27,7 +31,8 @@ module.exports = {
         modules: [
             path.resolve('./scss'),
             path.resolve('./node_modules'),
-            path.resolve('./components')
+            path.resolve('./components'),
+            path.resolve('./img')
         ]
     },
 }
