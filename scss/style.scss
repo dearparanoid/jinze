@@ -4,3 +4,15 @@ sans-serif;
 body {
     font-family: $fontStack;
 }
+
+.homeTitle {
+    display: block;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 40%;
+    h1 {
+        font-size: 3em;
+        color: grey;
+    }
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Header from 'header/Header';
+import Home from 'content/Home';
 import 'style.scss';
 
 class Index extends Component {
@@ -11,7 +12,12 @@ class Index extends Component {
   }
 
   render() {
-    return (<Header />);
+    return (
+      <div>
+        <Header />
+        <Home />
+      </div>
+    );
   }
 }
 

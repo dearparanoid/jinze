@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 
-class Home extends Comment {
-    constructor(props) {
-        super(props);
-        this.state = {
+class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
 
-        };
-    }
-    render() {
-        return (<div>Test</div>)
-    }
+    };
+  }
+  render() {
+    return (
+      <div className="homeTitle">
+        <h1>Light Always</h1>
+      </div>
+    );
+  }
 }
 
-export default Home
+export default Home;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Menu from 'menu/Menu';
 
 import 'header.scss';
 
@@ -10,8 +11,11 @@ class Header extends Component {
   }
   render() {
     return (
-      <div className="header">
-        <h1>HUANG JINZE</h1>
+      <div className="header-container">
+        <div className="header">
+          <h1>HUANG JINZE</h1>
+        </div>
+        <Menu />
       </div>
     );
   }

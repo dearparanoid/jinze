@@ -1,6 +1,27 @@
-.header {
-    display: block;
+@mixin prefix($map, $vendors: webkit moz ms o){
+    @each $prop, $value in $map {
+        @if $vendors {
+            @each $vendor in $vendors{
+                #{"-" + $vendor + "-" + $prop}: #{$value};
+            }
+        }
+        #{$prop}: #{$value};
+    }
+}
+
+.header-container{
+    @include prefix((display: 'flex'), webkit);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
     margin: 0 auto;
-    top: 0;
-    width: 80%;
+}
+
+.header {
+    
+}
+
+.menu {
+    float: right;
 }
