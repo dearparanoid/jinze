@@ -2,11 +2,12 @@
   "name": "jinze",
   "version": "0.9.0",
   "description": "React Restructure",
-  "main": "main.js",
+  "main": "index.js",
   "homepage": "https://dearparanoid.github.io/jinze",
   "scripts": {
-    "dev": "webpack-dev-server --devtool eval --progress --colors --content-base build",
-    "build": "webpack --progress"
+    "dev": "webpack-dev-server --devtool eval --progress --colors --content-base --inline",
+    "build": "webpack --progress",
+    "start": "webpack-dev-server --inline --content-base ."    
   },
   "repository": {
     "type": "git",

@@ -2,9 +2,9 @@ import 'babel-polyfill';
 import React from 'react';
 import { render } from 'react-dom';
 
-import Index from './components/Index';
+import App from './components/App';
 
 render(
-  <Index />,
+  <App />,
   document.getElementById('app'),
 );

@@ -1,10 +1,10 @@
 const path = require('path');
 
 module.exports = {
-    entry: ['babel-polyfill', './main.js'],
+    entry: ['babel-polyfill', './index.js'],
     output: {
-        path: path.join(__dirname, 'build'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: ''
     },
     module: {
         loaders: [
