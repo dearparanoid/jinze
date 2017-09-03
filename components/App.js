@@ -45,10 +45,10 @@ class App extends Component {
         <Router>
           <div>
             <Menu noOverlay={false} isOpen={this.state.close}>
-              <Link className="bm-menu-item" to="/">Home</Link>
+              <Link className="bm-menu-item" to="/jinze">Home</Link>
               <Link className="bm-menu-item" to="/about">About</Link>
             </Menu>
-            <Route exact={true} path="/" component={Home} />
+            <Route exact={true} path="/jinze" component={Home} />
             <Route path="/about" component={About} />
           </div>
         </Router>
