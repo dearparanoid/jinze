@@ -1,0 +1,23 @@
+.about{
+    display: flex;
+    position: relative;
+    padding-top: 75px;
+    flex-direction: column;
+    img {
+        margin: 25px auto;
+        width: 50vw;
+        padding-top: 0;
+    }
+    h1 {
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+    }
+    div{
+        margin-top: 10px;
+        text-align: center;
+        a{
+            color: black;
+            text-decoration: none;
+        }
+    }
+}

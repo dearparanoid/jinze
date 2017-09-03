@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import { slide as Menu } from 'react-burger-menu';
 
-import Header from 'header/Header';
+// import Header from 'header/Header';
 import Home from 'content/Home';
 import About from 'content/About';
 
@@ -13,18 +13,40 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      close: false,
     };
+  }
+
+  componentWillMount() {
+
+  }
+
+  componentDidMount() {
+
+  }
+
+  shouldComponentUpdate() {
+    this.setState({ close: false });
+    return true;
+  }
+
+
+  componentWillUpdate() {
+
+  }
+
+  componentWillUnmount() {
+
   }
 
   render() {
     return (
-      <div id="outer-container" style={{ height: '100vh' }}>
-        <Header />
+      <div>
         <Router>
           <div>
-            <Menu outerContainerId={'outer-container'} noOverlay={false} rigtht={true}>
-              <Link className="menu-item" to="/">Home</Link>
-              <Link className="menu-item" to="/about">About</Link>
+            <Menu noOverlay={false} isOpen={this.state.close}>
+              <Link className="bm-menu-item" to="/">Home</Link>
+              <Link className="bm-menu-item" to="/about">About</Link>
             </Menu>
             <Route exact={true} path="/" component={Home} />
             <Route path="/about" component={About} />

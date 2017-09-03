@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import avatar from 'avatar.jpg';
 
+import 'about.scss';
+
 class About extends Component {
   constructor(props) {
     super(props);
@@ -10,8 +12,9 @@ class About extends Component {
   }
   render() {
     return (
-      <div>
-        <img src={avatar} alt="Avatar" />
+      <div className="about">
+        <img src={avatar} alt="Avatar" className="about" />
+        <div>Contact: gogogohuang@gmail.com</div>
       </div>
     );
   }

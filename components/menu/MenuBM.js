@@ -5,7 +5,6 @@ import { slide as Menu } from 'react-burger-menu';
 import Home from 'content/Home';
 import About from 'content/About';
 
-import 'header.scss';
 import 'menu.scss';
 
 class MenuBM extends Component {
