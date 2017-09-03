@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-import { Router, Route, hashHistory } from 'react-router';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { slide as Menu } from 'react-burger-menu';
 
 import Header from 'header/Header';
 import Home from 'content/Home';
 import About from 'content/About';
 
 import 'style.scss';
+import 'menu.scss';
 
-class Index extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,15 +18,21 @@ class Index extends Component {
 
   render() {
     return (
-      <div>
+      <div id="outer-container" style={{ height: '100vh' }}>
         <Header />
-        <Router history={hashHistory}>
-          <Route path="/" component={Home} />
-          <Route path="/about" component={About} />
+        <Router>
+          <div>
+            <Menu outerContainerId={'outer-container'} noOverlay={false} rigtht={true}>
+              <Link className="menu-item" to="/">Home</Link>
+              <Link className="menu-item" to="/about">About</Link>
+            </Menu>
+            <Route exact={true} path="/" component={Home} />
+            <Route path="/about" component={About} />
+          </div>
         </Router>
       </div>
     );
   }
 }
 
-export default Index;
+export default App;

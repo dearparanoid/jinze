@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Menu from 'menu/Menu';
 
 import 'header.scss';
 
@@ -15,7 +14,6 @@ class Header extends Component {
         <div className="header">
           <h1>HUANG JINZE</h1>
         </div>
-        <Menu />
       </div>
     );
   }
