@@ -45,7 +45,7 @@ class App extends Component {
       <div>
         <Router>
           <div>
-            <Menu noOverlay={false} isOpen={this.state.close}>
+            <Menu noOverlay={false} isOpen={this.state.close} width="15vw">
               <Link className="bm-menu-item" to="/jinze">Home</Link>
               <Link className="bm-menu-item" to="/about">About</Link>
               <Link className="bm-menu-item" to="/resume">Resume</Link>

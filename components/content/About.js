@@ -3,7 +3,7 @@ import FaInstagram from 'react-icons/lib/fa/instagram';
 import FaFlickr from 'react-icons/lib/fa/flickr';
 import FaWordpress from 'react-icons/lib/fa/wordpress';
 
-import avatar from 'avatar.jpg';
+import about from 'about.jpg';
 
 import 'about.scss';
 
@@ -17,7 +17,7 @@ class About extends Component {
   render() {
     return (
       <div className="about content">
-        <img src={avatar} alt="Avatar" className="about" />
+        <img src={about} alt="" className="about" />
         <div>
           <a href="https://www.instagram.com/gogogohuang" target="_blank" rel="noopener noreferrer"><FaInstagram size={28} /></a>
           <a href="https://www.flickr.com/gogogohuang" target="_blank" rel="noopener noreferrer"><FaFlickr size={28} /></a>

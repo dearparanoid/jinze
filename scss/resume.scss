@@ -1,0 +1,57 @@
+.resume {
+    display: flex;
+    width: 70vw;
+    margin: 0 auto;
+    flex-direction: column;
+    img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        background-position: center;
+        border-radius: 50%;
+    }
+}
+
+.resume-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resume-section {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    h2 {
+        margin-bottom: 0px;
+        &:after {
+            content: '';
+            background: lightgray;
+            margin-top: 10px;
+            width: 100%;
+            height: 2px;
+            display: block;
+        }
+    }
+}
+
+.resume-work {
+    display: flex;
+    flex-direction: column;
+    ul {
+        list-style-type: none;
+        padding: 0;
+        li {
+            padding-bottom: 10px;
+        }
+    }
+    .resume-item-title {
+        font-weight: bold;
+        margin: 0;
+    }
+    .resume-item {
+        font-weight: 100;
+        margin: 0;
+    }
+}
