@@ -23,7 +23,7 @@ class About extends Component {
           <a href="https://www.flickr.com/gogogohuang" target="_blank" rel="noopener noreferrer"><FaFlickr size={28} /></a>
           <a href="https://jzhuangblog.wordpress.com/" target="_blank" rel="noopener noreferrer"><FaWordpress size={28} /></a>
         </div>
-        <div style={{ fontWeight: 'bold', fontSize: '1.5em' }}>Front-end/Photo/Surfing/Hiphop/Diving</div>
+        <div className="about-desc">Front-end/Photo/Surfing/Hiphop/Diving</div>
       </div>
     );
   }

@@ -34,8 +34,8 @@ class Resume extends Component {
       <div className="content">
         <div className="resume">
           <div className="resume-header">
-            <h1> Huang Jin Ze </h1>
-            <ul style={{ listStyleType: 'none' }}>
+            <h1> Huang JinZe </h1>
+            <ul style={{ listStyleType: 'none', paddingLeft: '20px' }}>
               <li> phone: +886 921671393</li>
               <li> email: gogogohuang@gmail.com </li>
             </ul>

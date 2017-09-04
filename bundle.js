@@ -16313,7 +16313,7 @@ var App = function (_Component) {
             null,
             _react2.default.createElement(
               _reactBurgerMenu.slide,
-              { noOverlay: false, isOpen: this.state.close, width: '15vw' },
+              { noOverlay: false, isOpen: this.state.close },
               _react2.default.createElement(
                 _reactRouterDom.Link,
                 { className: 'bm-menu-item', to: '/jinze' },
@@ -16427,7 +16427,7 @@ var About = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          { style: { fontWeight: 'bold', fontSize: '1.5em' } },
+          { className: 'about-desc' },
           'Front-end/Photo/Surfing/Hiphop/Diving'
         )
       );
@@ -16565,11 +16565,11 @@ var Resume = function (_Component) {
             _react2.default.createElement(
               'h1',
               null,
-              ' Huang Jin Ze '
+              ' Huang JinZe '
             ),
             _react2.default.createElement(
               'ul',
-              { style: { listStyleType: 'none' } },
+              { style: { listStyleType: 'none', paddingLeft: '20px' } },
               _react2.default.createElement(
                 'li',
                 null,
@@ -22081,7 +22081,7 @@ exports = module.exports = __webpack_require__(94)(undefined);
 
 
 // module
-exports.push([module.i, ".about {\n  display: flex;\n  flex-direction: column; }\n  .about img {\n    margin: 25px auto 0px;\n    width: 50vw;\n    padding-top: 0; }\n  .about h1 {\n    text-align: center;\n    font-family: 'Montserrat', sans-serif; }\n  .about div {\n    margin-top: 10px;\n    text-align: center; }\n    .about div a {\n      color: black;\n      text-decoration: none; }\n", ""]);
+exports.push([module.i, ".about {\n  display: flex;\n  flex-direction: column; }\n  .about img {\n    margin: 25px auto 0px;\n    width: 50vw;\n    padding-top: 0; }\n  .about h1 {\n    text-align: center;\n    font-family: 'Montserrat', sans-serif; }\n  .about div {\n    margin-top: 10px;\n    text-align: center; }\n    .about div a {\n      color: black;\n      text-decoration: none; }\n\n.about-desc {\n  font-size: 1.5em;\n  font-weight: bold; }\n\n@media screen and (max-width: 650px) {\n  .about-desc {\n    font-size: 1em; } }\n", ""]);
 
 // exports
 
@@ -22095,7 +22095,7 @@ exports = module.exports = __webpack_require__(94)(undefined);
 
 
 // module
-exports.push([module.i, "/* Position and sizing of burger button */\n.bm-burger-button {\n  position: fixed;\n  width: 36px;\n  height: 30px;\n  left: 36px;\n  top: 36px; }\n\n/* Color/shape of burger icon bars */\n.bm-burger-bars {\n  background: #373a47; }\n\n/* Position and sizing of clickable cross button */\n.bm-cross-button {\n  height: 24px;\n  width: 24px; }\n\n/* Color/shape of close button cross */\n.bm-cross {\n  background: #bdc3c7; }\n\n/* General sidebar styles */\n.bm-menu {\n  background: #373a47;\n  padding: 2.5em 1.5em 0;\n  font-size: 1.15em;\n  overflow: hidden !important; }\n\n/* Morph shape necessary with bubble or elastic */\n.bm-morph-shape {\n  fill: #373a47; }\n\n/* Wrapper for item list */\n.bm-item-list {\n  color: #b8b7ad;\n  padding: 0.8em; }\n\n/* Styling of overlay */\n.bm-overlay {\n  background: rgba(0, 0, 0, 0.3); }\n\n.bm-menu-item {\n  text-decoration: none;\n  color: lightgray;\n  margin: 10px 0; }\n", ""]);
+exports.push([module.i, "/* Position and sizing of burger button */\n.bm-burger-button {\n  position: fixed;\n  width: 36px;\n  height: 30px;\n  left: 36px;\n  top: 36px; }\n\n/* Color/shape of burger icon bars */\n.bm-burger-bars {\n  background: #373a47; }\n\n/* Position and sizing of clickable cross button */\n.bm-cross-button {\n  height: 24px;\n  width: 24px; }\n\n/* Color/shape of close button cross */\n.bm-cross {\n  background: #bdc3c7; }\n\n/* General sidebar styles */\n.bm-menu {\n  background: #373a47;\n  padding: 2.5em 1.5em 0;\n  font-size: 1.15em;\n  overflow: hidden !important; }\n\n/* Morph shape necessary with bubble or elastic */\n.bm-morph-shape {\n  fill: #373a47; }\n\n/* Wrapper for item list */\n.bm-item-list {\n  color: #b8b7ad;\n  padding: 0.8em; }\n\n/* Styling of overlay */\n.bm-overlay {\n  background: rgba(0, 0, 0, 0.3); }\n\n.bm-menu-item {\n  text-decoration: none;\n  color: lightgray;\n  margin: 10px 0; }\n\n.bm-menu-wrap {\n  width: 250px !important; }\n\n@media screen and (max-width: 650px) {\n  .bm-menu-wrap {\n    width: 100% !important; }\n  .bm-menu-item {\n    margin: 20px 0;\n    font-size: 1.5em; } }\n", ""]);
 
 // exports
 
