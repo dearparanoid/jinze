@@ -5,6 +5,7 @@ import { slide as Menu } from 'react-burger-menu';
 // import Header from 'header/Header';
 import Home from 'content/Home';
 import About from 'content/About';
+import Resume from 'content/Resume';
 
 import 'style.scss';
 import 'menu.scss';
@@ -47,9 +48,11 @@ class App extends Component {
             <Menu noOverlay={false} isOpen={this.state.close}>
               <Link className="bm-menu-item" to="/jinze">Home</Link>
               <Link className="bm-menu-item" to="/about">About</Link>
+              <Link className="bm-menu-item" to="/resume">Resume</Link>
             </Menu>
             <Route exact={true} path="/jinze" component={Home} />
             <Route path="/about" component={About} />
+            <Route path="/resume" component={Resume} />
           </div>
         </Router>
       </div>
