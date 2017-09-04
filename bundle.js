@@ -16427,8 +16427,8 @@ var About = function (_Component) {
         ),
         _react2.default.createElement(
           'div',
-          null,
-          'Contact: gogogohuang@gmail.com'
+          { style: { fontWeight: 'bold', fontSize: '1.5em' } },
+          'Front-end/Photo/Surfing/Hiphop/Diving'
         )
       );
     }
