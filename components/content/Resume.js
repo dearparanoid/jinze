@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import ResumeHeader from 'content/resume/ResumeHeader';
+// import ResumeSection from 'content/resume/ResumeSection';
 import 'resume.scss';
 
 class Resume extends Component {
@@ -33,13 +35,7 @@ class Resume extends Component {
     return (
       <div className="content">
         <div className="resume">
-          <div className="resume-header">
-            <h1> Huang JinZe </h1>
-            <ul style={{ listStyleType: 'none', paddingLeft: '20px' }}>
-              <li> phone: +886 921671393</li>
-              <li> email: gogogohuang@gmail.com </li>
-            </ul>
-          </div>
+          <ResumeHeader class={'resume-header'} />
           <div className="resume-section">
             <h2> Summary </h2>
             <p> Major in ReactJS/Scss</p>
