@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { slide as Menu } from 'react-burger-menu';
 
-// import Header from 'header/Header';
-import Home from 'content/Home';
-import About from 'content/About';
-import Resume from 'content/Resume';
+import MenuBM from 'menu/MenuBM';
 
 import 'style.scss';
-import 'menu.scss';
 
 class App extends Component {
   constructor(props) {
@@ -18,43 +12,16 @@ class App extends Component {
     };
   }
 
-  componentWillMount() {
-
-  }
-
-  componentDidMount() {
-
-  }
-
-  shouldComponentUpdate() {
-    this.setState({ close: false });
-    return true;
-  }
-
-
-  componentWillUpdate() {
-
-  }
-
-  componentWillUnmount() {
-
-  }
+  componentWillMount() { }
+  componentDidMount() { }
+  shouldComponentUpdate() { }
+  componentWillUpdate() { }
+  componentWillUnmount() { }
 
   render() {
     return (
       <div>
-        <Router>
-          <div>
-            <Menu noOverlay={false} isOpen={this.state.close}>
-              <Link className="bm-menu-item" to="/jinze">Home</Link>
-              <Link className="bm-menu-item" to="/about">About</Link>
-              <Link className="bm-menu-item" to="/resume">Resume</Link>
-            </Menu>
-            <Route exact={true} path="/jinze" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/resume" component={Resume} />
-          </div>
-        </Router>
+        <MenuBM />
       </div>
     );
   }
