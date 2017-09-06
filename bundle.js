@@ -16773,7 +16773,7 @@ var MenuBM = function (_Component) {
             { noOverlay: false, isOpen: this.state.close },
             _react2.default.createElement(
               _reactRouterDom.Link,
-              { className: 'bm-menu-item', to: '/' },
+              { className: 'bm-menu-item', to: '/jinze' },
               'Home'
             ),
             _react2.default.createElement(
@@ -16787,7 +16787,7 @@ var MenuBM = function (_Component) {
               'Resume'
             )
           ),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/jinze', component: _Home2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _About2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/resume', component: _Resume2.default })
         )
