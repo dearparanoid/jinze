@@ -14,7 +14,9 @@ class App extends Component {
 
   componentWillMount() { }
   componentDidMount() { }
-  shouldComponentUpdate() { }
+  shouldComponentUpdate() {
+    return true;
+  }
   componentWillUpdate() { }
   componentWillUnmount() { }
 
