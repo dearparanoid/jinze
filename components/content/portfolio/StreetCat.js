@@ -74,6 +74,7 @@ class StreetCat extends Component {
       `https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${this.APIKEY}&photoset_id=${this.PhotoSet_ID}&user_id=${this.User_ID}&format=json&nojsoncallback=1`, {
         method: 'GET',
         headers: {},
+        mode: 'cors',
       })
       .then((response) => {
         // ok 代表狀態碼在範圍 200-299

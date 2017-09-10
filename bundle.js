@@ -16777,7 +16777,8 @@ var StreetCat = function (_Component) {
 
       fetch('https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=' + this.APIKEY + '&photoset_id=' + this.PhotoSet_ID + '&user_id=' + this.User_ID + '&format=json&nojsoncallback=1', {
         method: 'GET',
-        headers: {}
+        headers: {},
+        mode: 'cors'
       }).then(function (response) {
         // ok 代表狀態碼在範圍 200-299
         if (!response.ok) throw new Error(response.statusText);
@@ -17066,11 +17067,6 @@ var MenuBM = function (_Component) {
                 _reactRouterDom.Link,
                 { className: 'bm-menu-item-child', to: '/streetcat', onClick: this.handleMenu },
                 'Street Cat'
-              ),
-              _react2.default.createElement(
-                _reactRouterDom.Link,
-                { className: 'bm-menu-item-child', to: '/about', onClick: this.handleMenu },
-                'About'
               )
             )
           ),

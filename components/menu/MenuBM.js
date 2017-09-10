@@ -73,7 +73,6 @@ class MenuBM extends Component {
               width={150}
             >
               <Link className="bm-menu-item-child" to="/streetcat" onClick={this.handleMenu}>Street Cat</Link>
-              <Link className="bm-menu-item-child" to="/about" onClick={this.handleMenu}>About</Link>
             </Menu>
           </Menu>
           <Route exact={true} path="/jinze" component={Home} />
