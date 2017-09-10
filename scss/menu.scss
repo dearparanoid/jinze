@@ -54,7 +54,33 @@
   }
 
   .bm-menu-wrap {
-    width: 250px !important;
+    // width: 250px !important;
+  }
+
+  .no-padding {
+    padding: 0;
+  }
+
+  .bm-menu-child {
+    background: transparent;
+    padding:0;
+    font-size: 0.75em;
+    overflow: hidden !important;
+  }
+
+  .bm-menu-item-child {
+    padding: 0;
+    text-decoration: none;
+    color: lightgray;
+  }
+
+  .bm-item-list-child {
+    color: #b8b7ad;
+    padding-left: 1.25em;
+  }
+
+  .bm-cross-child{
+    top: 0px !important;
   }
 
   @media screen and (max-width: 650px) {
