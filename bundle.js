@@ -16702,8 +16702,8 @@ var StreetCat = function (_Component) {
 
     _this.PHOTO_SET = [];
 
-    _this.handleServerPhotosetLoad = _this.handleServerPhotosetLoad.bind(_this);
-    _this.getPhotoSet = _this.getPhotoSet.bind(_this);
+    _this.handleServerPhotoset = _this.handleServerPhotoset.bind(_this);
+    _this.handleServerPhotoSize = _this.handleServerPhotoSize.bind(_this);
 
     _this.state = {
       dataReady: false,
@@ -16714,12 +16714,12 @@ var StreetCat = function (_Component) {
 
   _createClass(StreetCat, [{
     key: 'componentWillMount',
-    value: function componentWillMount() {}
+    value: function componentWillMount() {
+      this.handleServerPhotoset();
+    }
   }, {
     key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.handleServerPhotosetLoad();
-    }
+    value: function componentDidMount() {}
   }, {
     key: 'shouldComponentUpdate',
     value: function shouldComponentUpdate() {
@@ -16732,47 +16732,33 @@ var StreetCat = function (_Component) {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {}
   }, {
-    key: 'getPhotoSet',
-    value: function getPhotoSet(photoset) {
+    key: 'handleServerPhotoSize',
+    value: function handleServerPhotoSize(x) {
       var _this2 = this;
 
-      /**
-          {
-          src: 'http://example.com/example/img1.jpg',
-          srcset: [
-            'http://example.com/example/img1_1024.jpg 1024w',
-            'http://example.com/example/img1_800.jpg 800w',
-            'http://example.com/example/img1_500.jpg 500w',
-            'http://example.com/example/img1_320.jpg 320w',
-          ],
-          sizes:[
-            '(min-width: 480px) 50vw',
-            '(min-width: 1024px) 33.3vw',
-            '100vw'
-          ],
-          width: 681,
-          height: 1024,
-          alt: 'image 1',
-        },
-      */
-      /** 
-          https://farm1.staticflickr.com/2/1418878_1e92283336_m.jpg
-      
-          farm-id: 1
-          server-id: 2
-          photo-id: 1418878
-          secret: 1e92283336
-          size: m
-      */
-      photoset.photo.forEach(function (x) {
-        console.log(x);
-        var url = 'http://farm' + x.farm + '.staticflickr.com/' + x.server + '/' + x.id + '_' + x.secret + '_m.jpg';
-        _this2.PHOTO_SET.push({ src: url, alt: x.title, width: 100, height: 100, srcset: [], sizes: [] });
+      fetch('https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=' + this.APIKEY + '&photo_id=' + x.id + '&format=json&nojsoncallback=1', {
+        method: 'GET',
+        headers: {},
+        mode: 'cors'
+      }).then(function (response) {
+        if (!response.ok) throw new Error(response.statusText);
+        return response.json();
+      }).then(function (data) {
+        _this2.PHOTO_SET.push({
+          src: data.sizes.size[6].source,
+          width: parseInt(data.sizes.size[6].width, 10),
+          height: parseInt(data.sizes.size[6].height, 10),
+          srcset: [],
+          sizes: []
+        });
+        _this2.setState({ dataReady: true });
+      }).catch(function () {
+        _this2.setState({ dataReady: false });
       });
     }
   }, {
-    key: 'handleServerPhotosetLoad',
-    value: function handleServerPhotosetLoad() {
+    key: 'handleServerPhotoset',
+    value: function handleServerPhotoset() {
       var _this3 = this;
 
       fetch('https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=' + this.APIKEY + '&photoset_id=' + this.PhotoSet_ID + '&user_id=' + this.User_ID + '&format=json&nojsoncallback=1', {
@@ -16780,14 +16766,15 @@ var StreetCat = function (_Component) {
         headers: {},
         mode: 'cors'
       }).then(function (response) {
-        // ok 代表狀態碼在範圍 200-299
         if (!response.ok) throw new Error(response.statusText);
-
-        response.json().then(function (data) {
-          _this3.setState({ data: data, dataReady: true });
+        return response.json();
+      }).then(function (data) {
+        data.photoset.photo.forEach(function (x) {
+          _this3.handleServerPhotoSize(x);
         });
-      }).catch(function (error) {
-        console.error(error);
+        _this3.setState({ data: data });
+      }).catch(function () {
+        _this3.setState({ dataReady: false });
       });
     }
   }, {
@@ -16800,15 +16787,20 @@ var StreetCat = function (_Component) {
           _react2.default.createElement(
             'h1',
             null,
-            'Loading...'
+            'Data Fetching...'
           )
         );
       }
-      this.getPhotoSet(this.state.data.photoset);
+
       return _react2.default.createElement(
         'div',
-        { className: 'homeTitle' },
-        _react2.default.createElement(_reactPhotoGallery2.default, { photos: this.PHOTO_SET, onClickPhoto: this.openLightbox })
+        { className: 'portfolioTitle' },
+        _react2.default.createElement(
+          'h1',
+          null,
+          this.state.data.photoset.title
+        ),
+        _react2.default.createElement(_reactPhotoGallery2.default, { photos: this.PHOTO_SET })
       );
     }
   }]);
@@ -22547,7 +22539,7 @@ exports = module.exports = __webpack_require__(95)(undefined);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 
 // module
-exports.push([module.i, "body {\n  font-family: \"Open Sans\", sans-serif;\n  margin: 0; }\n\n.homeTitle {\n  display: block;\n  position: absolute;\n  text-align: center;\n  width: 100%;\n  top: 40%; }\n  .homeTitle h1 {\n    font-size: 3em;\n    color: grey; }\n\n.content {\n  position: relative;\n  padding-top: 75px; }\n", ""]);
+exports.push([module.i, "body {\n  font-family: \"Open Sans\", sans-serif;\n  margin: 0; }\n\n.homeTitle {\n  display: block;\n  position: absolute;\n  text-align: center;\n  width: 100%;\n  top: 40%; }\n  .homeTitle h1 {\n    font-size: 3em;\n    color: grey; }\n\n.portfolioTitle {\n  display: block;\n  position: absolute;\n  text-align: center;\n  width: 100%;\n  top: 5%; }\n  .portfolioTitle h1 {\n    font-size: 2em;\n    color: grey; }\n\n.content {\n  position: relative;\n  padding-top: 75px; }\n", ""]);
 
 // exports
 
