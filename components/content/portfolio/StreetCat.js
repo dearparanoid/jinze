@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Gallery from 'react-photo-gallery';
 
+import * as F_API from 'F_API';
+
 class StreetCat extends Component {
   constructor(props) {
     super(props);
 
-    this.APIKEY = 'a622ee062e1d799d9df510615a2247e5';
-    this.PhotoSet_ID = '72157686414625164';
-    this.User_ID = '14325930@N05';
+    this.PhotoSetID = '72157686414625164';
 
     this.PHOTO_SET = [];
 
@@ -34,7 +34,7 @@ class StreetCat extends Component {
 
   handleServerPhotoSize(x) {
     fetch(
-      `https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=${this.APIKEY}&photo_id=${x.id}&format=json&nojsoncallback=1`, {
+      `${F_API.URL}=flickr.photos.getSizes&api_key=${F_API.APIKEY}&photo_id=${x.id}&format=json&nojsoncallback=1`, {
         method: 'GET',
         headers: {},
         mode: 'cors',
@@ -62,7 +62,7 @@ class StreetCat extends Component {
 
   handleServerPhotoset() {
     fetch(
-      `https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=${this.APIKEY}&photoset_id=${this.PhotoSet_ID}&user_id=${this.User_ID}&format=json&nojsoncallback=1`, {
+      `${F_API.URL}=flickr.photosets.getPhotos&api_key=${F_API.APIKEY}&photoset_id=${this.PhotoSetID}&user_id=${F_API.UserID}&format=json&nojsoncallback=1`, {
         method: 'GET',
         headers: {},
         mode: 'cors',

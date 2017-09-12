@@ -32,7 +32,8 @@ module.exports = {
             path.resolve('./scss'),
             path.resolve('./node_modules'),
             path.resolve('./components'),
-            path.resolve('./img')
+            path.resolve('./img'),
+            path.resolve('./common')
         ]
     },
 }
