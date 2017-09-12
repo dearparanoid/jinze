@@ -9,6 +9,7 @@ import About from 'content/About';
 import Resume from 'content/Resume';
 import Portfolio from 'content/portfolio/Portfolio';
 import StreetCat from 'content/portfolio/StreetCat';
+import FamilyTrip from 'content/portfolio/FamilyTrip';
 
 import 'menu.scss';
 
@@ -70,9 +71,10 @@ class MenuBM extends Component {
               itemListClassName="no-padding bm-item-list-child"
               crossButtonClassName="bm-cross-child"
               isOpen={this.state.childMenuClose}
-              width={150}
+              width={200}
             >
               <Link className="bm-menu-item-child" to="/streetcat" onClick={this.handleMenu}>Street Cat</Link>
+              <Link className="bm-menu-item-child" to="/FamilyTrip" onClick={this.handleMenu}>Family Trip in Kansai</Link>
             </Menu>
           </Menu>
           <Route exact={true} path="/jinze" component={Home} />
@@ -80,6 +82,7 @@ class MenuBM extends Component {
           <Route path="/resume" component={Resume} />
           <Route path="/portfolio" component={Portfolio} />
           <Route path="/streetcat" component={StreetCat} />
+          <Route path="/familyTrip" component={FamilyTrip} />
         </div>
       </Router>
     );
