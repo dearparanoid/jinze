@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import Gallery from 'react-photo-gallery';
+import PropTypes from 'prop-types';
 
 import * as F_API from 'F_API';
 
-class StreetCat extends Component {
+class GetPhotoset extends Component {
   constructor(props) {
     super(props);
-
-    this.PhotoSetID = '72157685958265933';
 
     this.PHOTO_SET = [];
 
@@ -17,6 +16,7 @@ class StreetCat extends Component {
     this.state = {
       dataReady: false,
       data: [],
+      photosetId: this.props.photosetId,
     };
   }
 
@@ -62,7 +62,7 @@ class StreetCat extends Component {
 
   handleServerPhotoset() {
     fetch(
-      `${F_API.URL}=flickr.photosets.getPhotos&api_key=${F_API.APIKEY}&photoset_id=${this.PhotoSetID}&user_id=${F_API.UserID}&format=json&nojsoncallback=1`, {
+      `${F_API.URL}=flickr.photosets.getPhotos&api_key=${F_API.APIKEY}&photoset_id=${this.state.photosetId}&user_id=${F_API.UserID}&format=json&nojsoncallback=1`, {
         method: 'GET',
         headers: {},
         mode: 'cors',
@@ -100,5 +100,13 @@ class StreetCat extends Component {
   }
 }
 
-export default StreetCat;
+GetPhotoset.propTypes = {
+  photosetId: PropTypes.string.isRequired,
+};
+
+GetPhotoset.defaultProps = {
+
+};
+
+export default GetPhotoset;
 
