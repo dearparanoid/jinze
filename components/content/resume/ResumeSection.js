@@ -28,6 +28,7 @@ class ResumeSection extends Component {
         <h3 className="resume-item-title">{this.state.data.data.title}</h3>
         <h4 className="resume-item">{this.state.data.data.company}</h4>
         <h4 className="resume-item">{this.state.data.data.date}</h4>
+        <h4 className="resume-item">{this.state.data.data.product}</h4>
       </div>
     );
   }

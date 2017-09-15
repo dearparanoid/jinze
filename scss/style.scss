@@ -4,20 +4,28 @@ sans-serif;
 body {
     font-family: $fontStack;
     margin: 0;
+    overflow-x: hidden;
 }
 
 .homeTitle {
     display: block;
     position: absolute;
     text-align: center;
-    width: 100%;
-    top: 40%;
+    .homeImg {
+        position: fixed;
+        display: block;
+        height: 105vh;
+        width: auto;
+    }
     h1 {
+        position: fixed;
+        width:100vw;
+        top:50vh;
         font-size: 3em;
         color: grey;
     }
-
 }
+
 .portfolioTitle{
     display: block;
     position: absolute;

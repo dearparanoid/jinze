@@ -39,13 +39,7 @@
 .resume-work {
     display: flex;
     flex-direction: column;
-    ul {
-        list-style-type: none;
-        padding: 0;
-        li {
-            padding-bottom: 10px;
-        }
-    }
+    margin: 20px 0;
     .resume-item-title {
         font-weight: bold;
         margin: 0;

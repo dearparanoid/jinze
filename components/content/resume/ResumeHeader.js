@@ -13,7 +13,9 @@ class ResumeHeader extends Component {
 
   componentDidMount() { }
 
-  shouldComponentUpdate() { }
+  shouldComponentUpdate() {
+    return true;
+  }
 
   componentWillUpdate() { }
 
