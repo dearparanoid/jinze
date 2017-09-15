@@ -9,11 +9,14 @@ class ResumeSection extends Component {
     };
   }
 
-  componentWillMount() { }
+  componentWillMount() {
+  }
 
   componentDidMount() { }
 
-  shouldComponentUpdate() { }
+  shouldComponentUpdate() {
+    return true;
+  }
 
   componentWillUpdate() { }
 
@@ -21,7 +24,11 @@ class ResumeSection extends Component {
 
   render() {
     return (
-      <div />
+      <div className="resume-work">
+        <h3 className="resume-item-title">{this.state.data.data.title}</h3>
+        <h4 className="resume-item">{this.state.data.data.company}</h4>
+        <h4 className="resume-item">{this.state.data.data.date}</h4>
+      </div>
     );
   }
 }
