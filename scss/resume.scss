@@ -22,7 +22,7 @@
 .resume-section {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 95%;
     h2 {
         margin-bottom: 0px;
         &:after {
@@ -38,8 +38,9 @@
 
 .resume-work {
     display: flex;
+    position: relative;
     flex-direction: column;
-    margin: 20px 0;
+    margin: 20px;
     .resume-item-title {
         font-weight: bold;
         margin: 0;
@@ -49,6 +50,53 @@
         margin: 0;
     }
 }
+
+.resume-line{
+        &::after{
+            content: '';
+            width: 5px;
+            height: 100%;
+            background-color: black;
+            display: block;
+            position: absolute;
+            left: -15px;
+            top: 0;
+            z-index: 0;
+        }
+
+}
+
+.resume-skill{
+    display: flex;
+    margin: 20px;
+    .skill-block{
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: flex-start;
+        h4{
+            flex: 1;
+        }
+        .skill-content{
+            flex: 1;
+
+        }
+        &::before{
+            content: '';
+            width: 2.5px;
+            height: 100%;
+            background-color: black;
+            display: block;
+            position: relative;
+            left: -15px;
+            top: 0;
+            z-index: 0;
+        }
+    }
+}
+
+
 
 @media screen and (max-width: 650px) {
 
