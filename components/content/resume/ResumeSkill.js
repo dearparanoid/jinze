@@ -11,6 +11,9 @@ class ResumeSkill extends Component {
     };
     this.getSkillLan = this.getSkillLan.bind(this);
     this.getSkillTool = this.getSkillTool.bind(this);
+    /** dirty code */
+    this.getSkillItem = this.getSkillItem.bind(this);
+    /** end */
   }
 
   componentWillMount() { }
@@ -28,7 +31,7 @@ class ResumeSkill extends Component {
   getSkillLan() {
     const skillBlock =
     this.state.data.language.map((ele) => {
-      return <li style={{ whiteSpace: 'nowrap' }} key={ele}>{ele}</li>;
+      return this.getSkillItem(ele);
     });
 
     return skillBlock;
@@ -37,10 +40,13 @@ class ResumeSkill extends Component {
   getSkillTool() {
     const skillBlock =
     this.state.data.tool.map((ele) => {
-      return <li style={{ whiteSpace: 'nowrap' }} key={ele}>{ele}</li>;
+      return this.getSkillItem(ele);
     });
 
     return skillBlock;
+  }
+  getSkillItem(ele) {
+    return <li style={{ whiteSpace: 'nowrap' }} key={ele}>{ele}</li>;
   }
 
   render() {
