@@ -1,3 +1,5 @@
+@import 'mixin';
+
 .resume {
     display: flex;
     width: 70vw;
@@ -22,17 +24,9 @@
 .resume-section {
     display: flex;
     flex-direction: column;
-    width: 95%;
+    width: 100%;
     h2 {
         margin-bottom: 0px;
-        &:after {
-            content: '';
-            background: lightgray;
-            margin-top: 10px;
-            width: 100%;
-            height: 2px;
-            display: block;
-        }
     }
 }
 
@@ -53,17 +47,8 @@
 
 .resume-line{
         &::after{
-            content: '';
-            width: 5px;
-            height: 100%;
-            background-color: black;
-            display: block;
-            position: absolute;
-            left: -15px;
-            top: 0;
-            z-index: 0;
+            @include straightLine(5px, -15px, absolute, black );
         }
-
 }
 
 .resume-skill{
@@ -83,15 +68,7 @@
 
         }
         &::before{
-            content: '';
-            width: 2.5px;
-            height: 100%;
-            background-color: black;
-            display: block;
-            position: relative;
-            left: -15px;
-            top: 0;
-            z-index: 0;
+            @include straightLine(2.5px, -15px, relative, grey );
         }
     }
 }

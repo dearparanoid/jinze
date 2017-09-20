@@ -9,8 +9,9 @@ class Portfolio extends Component {
   }
   render() {
     return (
-      <div className="homeTitle">
+      <div className="portfolioTitle">
         <h1>ToDo...</h1>
+        <p>Plz check it from buger-menu if u r interested in my portfolio</p>
       </div>
     );
   }
