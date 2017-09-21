@@ -7,6 +7,7 @@ import FaMinus from 'react-icons/lib/fa/minus';
 import Home from 'content/Home';
 import About from 'content/About';
 import Resume from 'content/Resume';
+import Article from 'content/article/Article';
 import Portfolio from 'content/portfolio/Portfolio';
 import StreetCat from 'content/portfolio/album/StreetCat';
 import FamilyTrip from 'content/portfolio/album/FamilyTrip';
@@ -70,6 +71,7 @@ class MenuBM extends Component {
             <Link className="bm-menu-item" to="/jinze">Home</Link>
             <Link className="bm-menu-item" to="/about" onClick={this.handleMenu}>About</Link>
             <Link className="bm-menu-item" to="/resume" onClick={this.handleMenu}>Resume</Link>
+            <Link className="bm-menu-item" to="/article" onClick={this.handleMenu}>Article</Link>
             <Link className="bm-menu-item" to="/portfolio" onClick={this.handleMenu} style={{ width: '70%', display: 'initial' }}>Portfolio</Link>
             {this.getChildMenuBtn()}
             <Menu
@@ -97,6 +99,7 @@ class MenuBM extends Component {
           <Route path="/about" component={About} />
           <Route path="/resume" component={Resume} />
           <Route path="/portfolio" component={Portfolio} />
+          <Route path="/article" component={Article} />
           <Route path="/streetcat" component={StreetCat} />
           <Route path="/familyTrip" component={FamilyTrip} />
           <Route path="/beforeLove" component={BeforeLove} />
