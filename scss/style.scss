@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
-$fontStack: 'Open Sans',
-sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+$fontStack: 'Raleway', sans-serif;
+
 body {
     font-family: $fontStack;
     margin: 0;
@@ -20,8 +20,8 @@ body {
     h1 {
         position: fixed;
         width:100vw;
-        top:50vh;
-        font-size: 3em;
+        top:27vh;
+        font-size: 10em;
         color: grey;
     }
 }
@@ -33,7 +33,7 @@ body {
     width: 100%;
     top: 5%;
     h1 {
-        font-size: 2em;
+        font-size: 7em;
         color: grey;
     }
 }
