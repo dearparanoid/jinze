@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import Net from 'net';
 
 class Article extends Component {
   constructor(props) {
     super(props);
 
-    this.login = this.login.bind(this);
+    this.fetchDatafromServer = this.fetchDatafromServer.bind(this);
 
     this.state = {
     };
@@ -21,15 +20,19 @@ class Article extends Component {
   componentWillUpdate() { }
   componentWillUnmount() { }
 
-  login() {
-    const gConn = Net.createConnection({ port: 23, host: 'ptt2.cc' });
-    console.warn(gConn);
+  fetchDatafromServer() {
+    console.info('nothing...');
+    /**
+     * Description: 
+     *  Fetch a local file. I will write a node programm to parse specific article and save to a json file.
+     *  Plz refer to https://github.com/dearparanoid/ptt2-crawler, if u r interested. 
+     */
   }
 
+
   render() {
-    this.login('dearparanoid', 'zxcvbnma', () => {
-      console.info('Test Code');
-    });
+    this.fetchDatafromServer();
+
     return (
       <div className="homeTitle">
         <h1>ToDo...</h1>

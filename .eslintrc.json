@@ -52,7 +52,15 @@
             "warn",
             "always"
         ],
-        "class-methods-use-this": "off"
+        "class-methods-use-this": "off",
+        "max-len": [
+            "warn",
+            200,
+            {
+                "ignoreComments": true,
+                "ignoreRegExpLiterals": true
+            }
+        ]
     },
     "settings": {
         "import/resolver": {
