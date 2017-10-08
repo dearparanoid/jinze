@@ -52,7 +52,8 @@
             "warn",
             "always"
         ],
-        "class-methods-use-this": "off"
+        "class-methods-use-this": "off",
+        "no-underscore-dangle": ["off", { "allow": ["foo_", "_bar"] }]            
     },
     "settings": {
         "import/resolver": {

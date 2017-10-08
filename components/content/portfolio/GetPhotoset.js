@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Gallery from 'react-photo-gallery';
-import Lightbox from 'react-images';
 /** Type Check */
 import PropTypes from 'prop-types';
 
@@ -18,16 +17,10 @@ class GetPhotoset extends Component {
     this.handleServerPhotoset = this.handleServerPhotoset.bind(this);
     this.handleServerPhotoSize = this.handleServerPhotoSize.bind(this);
 
-    this.closeLightbox = this.closeLightbox.bind(this);
-    this.openLightbox = this.openLightbox.bind(this);
-    this.gotoNext = this.gotoNext.bind(this);
-    this.gotoPrevious = this.gotoPrevious.bind(this);
-
     this.state = {
       dataReady: false,
       data: [],
       photosetId: this.props.photosetId,
-      currentImage: 0,
     };
   }
 
@@ -42,28 +35,6 @@ class GetPhotoset extends Component {
   componentWillUpdate() { }
   componentWillUnmount() { }
 
-  openLightbox() {
-    this.setState({
-      currentImage: 0,
-      lightboxIsOpen: true,
-    });
-  }
-  closeLightbox() {
-    this.setState({
-      currentImage: 0,
-      lightboxIsOpen: false,
-    });
-  }
-  gotoPrevious() {
-    this.setState({
-      currentImage: this.state.currentImage - 1,
-    });
-  }
-  gotoNext() {
-    this.setState({
-      currentImage: this.state.currentImage + 1,
-    });
-  }
 
   handleServerPhotoSize(x) {
     fetch(
@@ -134,18 +105,7 @@ class GetPhotoset extends Component {
     return (
       <div className="portfolioTitle">
         <h1>{this.state.data.photoset.title}</h1>
-        <Gallery photos={this.PHOTO_SET} onClick={() => { return this.openLightbox(); }} />
-        <Lightbox
-          theme={{ container: { background: 'rgba(0, 0, 0, 0.85)' } }}
-          images={this.PHOTO_SET.map((x) => { return { src: x.src, srcset: x.srcSet }; })}
-          backdropClosesModal={true}
-          onClose={this.closeLightbox}
-          onClickPrev={this.gotoPrevious}
-          onClickNext={this.gotoNext}
-          currentImage={this.state.currentImage}
-          isOpen={this.state.lightboxIsOpen}
-          width={1600}
-        />
+        <Gallery photos={this.PHOTO_SET} />
       </div>
     );
   }
