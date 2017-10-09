@@ -1,0 +1,74 @@
+$square: 10%;
+
+.panels{
+    display: block;
+    position: relative;
+    width: 100vw;
+    
+}
+
+.row{
+    padding: 0 5vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.cover{
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    margin: 10px 0;
+    width: 25vw;
+    height: 25vw;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+    outline: none;
+    :hover{
+        cursor: pointer;
+        transition-property: opacity;
+        transition-duration: 0.5s;
+        opacity: 0.6;
+    }
+    :focus, :active{
+        outline: none;
+    }
+    .image{
+        flex: 1;
+        margin: 0 auto;
+        img{
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .title{
+        flex:1;
+        font-size: bold;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color:white;
+        z-index: 1;
+    }
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    text-align: right;
+    font-weight: bold;
+    font-size: 28px;
+    cursor: pointer;
+    outline: none;
+    :focus, :active{
+        outline: none;
+    }
+}
