@@ -31,11 +31,6 @@ class MenuBM extends Component {
   componentWillUpdate() { }
   componentWillUnmount() { }
 
-
-  handleChildMenu() {
-    this.setState({ childMenuClose: !this.state.childMenuClose, close: true });
-  }
-
   handleMenu() {
     this.setState({ close: false });
   }
