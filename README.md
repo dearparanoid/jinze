@@ -2,7 +2,7 @@
 
 ## Status 
  - [x] Home
- - [x] Fetch data from Flickr.
+ - [x] Fetch data from Flickr.- Syncronized with all photosets in flickr
  - [ ] Fetch data from twiiter/plurk.
  - [x] Resume
  - [x] Protfolio
