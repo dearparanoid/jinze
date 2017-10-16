@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import home from 'home.jpg';
+// import home from 'home.jpg';
 
 class Home extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Home extends Component {
   render() {
     return (
       <div className="homeTitle">
-        <img src={home} alt="" className="homeImg" />
+        {/* <img src={home} alt="" className="homeImg" /> */}
         <h1>Light Always</h1>
       </div>
     );
