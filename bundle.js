@@ -16436,7 +16436,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-//import home from 'home.jpg';
+// import home from 'home.jpg';
 
 var Home = function (_Component) {
   _inherits(Home, _Component);
@@ -16542,10 +16542,17 @@ var Resume = function (_Component) {
     key: 'render',
     value: function render() {
       /** should get data from server */
+      var tripMomentJob = {
+        title: 'F2E Engineer',
+        company: 'TripMoment Inc.',
+        date: '2017/11 ~ Now',
+        product: 'tripmoment.com',
+        jobDesc: ['website development']
+      };
       var etherwanJob = {
         title: 'Senoir Software Engineer',
         company: 'EtherWAN System Inc.',
-        date: '2017/3 ~ now',
+        date: '2017/3 ~ 2017/11',
         product: 'Network Management System',
         jobDesc: ['Topology', 'UI Revision', 'Adapt GitLab']
       };
@@ -16600,6 +16607,7 @@ var Resume = function (_Component) {
               null,
               ' Work Experience '
             ),
+            _react2.default.createElement(_ResumeSection2.default, { data: tripMomentJob }),
             _react2.default.createElement(_ResumeSection2.default, { data: etherwanJob }),
             _react2.default.createElement(_ResumeSection2.default, { data: moxaJob })
           )
@@ -17544,6 +17552,11 @@ var MenuBM = function (_Component) {
   }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {}
+  }, {
+    key: 'handleChildMenu',
+    value: function handleChildMenu() {
+      this.setState({ childMenuClose: !this.state.childMenuClose, close: true });
+    }
   }, {
     key: 'handleMenu',
     value: function handleMenu() {

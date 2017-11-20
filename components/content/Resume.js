@@ -35,10 +35,17 @@ class Resume extends Component {
 
   render() {
     /** should get data from server */
+    const tripMomentJob = {
+      title: 'F2E Engineer',
+      company: 'TripMoment Inc.',
+      date: '2017/11 ~ Now',
+      product: 'tripmoment.com',
+      jobDesc: ['website development'],
+    };
     const etherwanJob = {
       title: 'Senoir Software Engineer',
       company: 'EtherWAN System Inc.',
-      date: '2017/3 ~ now',
+      date: '2017/3 ~ 2017/11',
       product: 'Network Management System',
       jobDesc: ['Topology', 'UI Revision', 'Adapt GitLab'],
     };
@@ -69,6 +76,7 @@ class Resume extends Component {
           </div>
           <div className="resume-section">
             <h2> Work Experience </h2>
+            <ResumeSection data={tripMomentJob} />
             <ResumeSection data={etherwanJob} />
             <ResumeSection data={moxaJob} />
           </div>
