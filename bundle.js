@@ -16586,7 +16586,7 @@ var Resume = function (_Component) {
             _react2.default.createElement(
               'p',
               null,
-              ' I am major in JavaScript, especially React. Now I develop a network management software that based on React and Node.JS. '
+              ' I am major in JavaScript, especially React. Now I am F2E engineer in TripMoment Inc. '
             )
           ),
           _react2.default.createElement(

@@ -67,8 +67,8 @@ class Resume extends Component {
           <ResumeHeader class={'resume-header'} />
           <div className="resume-section">
             <h2> Summary </h2>
-            <p> I am major in JavaScript, especially React. Now I develop a
-              network management software that based on React and Node.JS. </p>
+            <p> I am major in JavaScript, especially React.
+             Now I am F2E engineer in TripMoment Inc. </p>
           </div>
           <div className="resume-section">
             <h2> Skill </h2>
