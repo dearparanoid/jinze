@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
 import GetPhotoSetCover from 'content/portfolio/GetPhotoSetCover';
 import GetPhotoset from 'content/portfolio/GetPhotoset';
 
 import * as F_API from 'F_API';
 import 'portfolio.scss';
 
-class Portfolio extends Component {
+class PortfolioSet extends Component {
   constructor(props) {
     super(props);
     this.getAllPhotoSets = this.getAllPhotoSets.bind(this);
@@ -24,9 +26,14 @@ class Portfolio extends Component {
   componentDidMount() {
   }
 
+  componentWillReceiveProps() {
+    window.addEventListener('hashchange', this.handleHashChange, false);
+  }
+
   shouldComponentUpdate() {
     return true;
   }
+
   componentWillUpdate() {
 
   }
@@ -60,6 +67,15 @@ class Portfolio extends Component {
     this.setState({ selectedID: '' });
   }
 
+  handleHashChange = () => {
+    const hash = window.location.hash;
+    if (hash) {
+      this.getSelectedId(hash.slice(1));
+    } else {
+      this.backToPortfolio();
+    }
+  }
+
   render() {
     if (this.state.dataReady === false) {
       return <div className="portfolioTitle">Fetching Data</div>;
@@ -67,20 +83,29 @@ class Portfolio extends Component {
 
     if (this.state.selectedID) {
       return (
-        <div>
-          <GetPhotoset photosetId={this.state.selectedID} />
-          <div role="button" tabIndex="0" className="footer" onClick={() => { this.backToPortfolio(); }}>Back to Portofolio</div>
-        </div>);
+        <Router>
+          <Route>
+            <div>
+              <GetPhotoset photosetId={this.state.selectedID} />
+              <div role="button" tabIndex="0" className="footer" onClick={this.backToPortfolio}>Back to Portofolio</div>
+            </div>
+          </Route>
+        </Router>
+      );
     }
+
+
     const coverRow = [];
     this.state.photoData.forEach((x) => {
       coverRow.push(
-        <GetPhotoSetCover
-          id={x.id}
-          key={x.id}
-          title={x.title._content}
-          selectedID={this.getSelectedId}
-        />,
+        <Link to={`/portfolio#${x.id}`} className="portfolio-link" key={x.id}>
+          <GetPhotoSetCover
+            id={x.id}
+            key={x.id}
+            title={x.title._content}
+            selectedID={this.getSelectedId}
+          />
+        </Link>,
       );
     });
     return (
@@ -96,4 +121,4 @@ class Portfolio extends Component {
   }
 }
 
-export default Portfolio;
+export default PortfolioSet;

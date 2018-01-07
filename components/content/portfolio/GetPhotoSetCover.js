@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+
 /** Type Check */
 import PropTypes from 'prop-types';
 import * as F_API from 'F_API';
 
-class GetPhotoset extends Component {
+class GetPhotoSetCover extends Component {
   constructor(props) {
     super(props);
 
@@ -67,6 +68,7 @@ class GetPhotoset extends Component {
       return <div />;
     }
 
+
     return (
       <div
         className="cover"
@@ -83,15 +85,15 @@ class GetPhotoset extends Component {
   }
 }
 
-GetPhotoset.propTypes = {
+GetPhotoSetCover.propTypes = {
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   selectedID: PropTypes.func.isRequired,
 };
 
-GetPhotoset.defaultProps = {
+GetPhotoSetCover.defaultProps = {
 
 };
 
-export default GetPhotoset;
+export default GetPhotoSetCover;
 

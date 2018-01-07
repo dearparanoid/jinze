@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import MenuBM from 'menu/MenuBM';
 
@@ -22,9 +23,11 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <MenuBM />
-      </div>
+      <BrowserRouter>
+        <div>
+          <MenuBM />
+        </div>
+      </BrowserRouter>
     );
   }
 }
