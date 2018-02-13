@@ -39,7 +39,7 @@ class Resume extends Component {
       title: 'F2E Engineer',
       company: 'TripMoment Inc.',
       date: '2017/11 ~ Now',
-      product: 'tripmoment.com',
+      product: 'tripmoment.com/melovetravel.com',
       jobDesc: ['website development'],
     };
     const etherwanJob = {
