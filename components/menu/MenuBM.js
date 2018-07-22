@@ -5,7 +5,8 @@ import { slide as Menu } from 'react-burger-menu';
 import Home from 'content/Home';
 import About from 'content/About';
 import Resume from 'content/Resume';
-import PortfolioSet from 'content/portfolio/PortfolioSet';
+// import PortfolioSet from 'content/portfolio/PortfolioSet';
+import GetPhotosetContainer from 'container/GetPhotosetContainer';
 
 import 'menu.scss';
 
@@ -19,16 +20,9 @@ class MenuBM extends Component {
       close: false,
     };
   }
-
-  componentWillMount() { }
-  componentDidMount() { }
-
   shouldComponentUpdate() {
     return true;
   }
-
-  componentWillUpdate() { }
-  componentWillUnmount() { }
 
   handleMenu() {
     this.setState({ close: false });
@@ -47,7 +41,7 @@ class MenuBM extends Component {
           <Route exact={true} path="/jinze" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/resume" component={Resume} />
-          <Route path="/portfolio" component={PortfolioSet} />
+          <Route path="/portfolio" component={GetPhotosetContainer} />
         </div>
       </Router>
     );

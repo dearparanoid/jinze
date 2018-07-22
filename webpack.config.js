@@ -8,15 +8,15 @@ module.exports = {
     },
     module: {
         loaders: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loaders: 'eslint-loader',
-                enforce: 'pre',
-                options:{
-                    fix : 'true'
-                }
-            },
+            // {
+            //     test: /\.js$/,
+            //     exclude: /node_modules/,
+            //     loaders: 'eslint-loader',
+            //     enforce: 'pre',
+            //     options:{
+            //         fix : 'true'
+            //     }
+            // },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
