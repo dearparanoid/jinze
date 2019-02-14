@@ -29,6 +29,7 @@ const Title = styled.h1`
 
   ${customMedia.greaterThan('tablet')`
     font-size: 10em;
+    text-align: center;
   `}
 `;
 
