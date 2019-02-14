@@ -25,11 +25,11 @@ const Title = styled.h1`
   animation: ${fadeIn} 2s linear;
   ${customMedia.lessThan('tablet')`
     font-size: 5em;
+    text-align: center;
   `}
 
   ${customMedia.greaterThan('tablet')`
     font-size: 10em;
-    text-align: center;
   `}
 `;
 
