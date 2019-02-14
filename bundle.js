@@ -14502,7 +14502,7 @@ var _templateObject = _taggedTemplateLiteral(['\n  from {\n    opacity:0;\n  }\n
     _templateObject2 = _taggedTemplateLiteral(['\n  width: 100vw;\n  height: 100vh;\n  background-size: cover;\n  background-image: url(\'https://dearparanoid.github.io/jinze/img/home.jpg\');\n  background-position: center;\n'], ['\n  width: 100vw;\n  height: 100vh;\n  background-size: cover;\n  background-image: url(\'https://dearparanoid.github.io/jinze/img/home.jpg\');\n  background-position: center;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  color: #4e4e4e;\n  animation: ', ' 2s linear;\n  ', '\n\n  ', '\n'], ['\n  color: #4e4e4e;\n  animation: ', ' 2s linear;\n  ', '\n\n  ', '\n']),
     _templateObject4 = _taggedTemplateLiteral(['\n    font-size: 5em;\n  '], ['\n    font-size: 5em;\n  ']),
-    _templateObject5 = _taggedTemplateLiteral(['\n    font-size: 10em;\n  '], ['\n    font-size: 10em;\n  ']);
+    _templateObject5 = _taggedTemplateLiteral(['\n    font-size: 10em;\n    text-align: center;\n  '], ['\n    font-size: 10em;\n    text-align: center;\n  ']);
 
 var _react = __webpack_require__(2);
 
