@@ -14499,7 +14499,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _templateObject = _taggedTemplateLiteral(['\n  from {\n    opacity:0;\n  }\n  to {\n    opacity:1;\n  }\n'], ['\n  from {\n    opacity:0;\n  }\n  to {\n    opacity:1;\n  }\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  width: 100vw;\n  height: 100vh;\n  background-size: cover;\n  background-image: url(\'./img/home.jpg\');\n  background-position: center;\n'], ['\n  width: 100vw;\n  height: 100vh;\n  background-size: cover;\n  background-image: url(\'./img/home.jpg\');\n  background-position: center;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  width: 100vw;\n  height: 100vh;\n  background-size: cover;\n  background-image: url(\'https://dearparanoid.github.io/jinze/img/home.jpg\');\n  background-position: center;\n'], ['\n  width: 100vw;\n  height: 100vh;\n  background-size: cover;\n  background-image: url(\'https://dearparanoid.github.io/jinze/img/home.jpg\');\n  background-position: center;\n']),
     _templateObject3 = _taggedTemplateLiteral(['\n  color: #4e4e4e;\n  animation: ', ' 2s linear;\n  ', '\n\n  ', '\n'], ['\n  color: #4e4e4e;\n  animation: ', ' 2s linear;\n  ', '\n\n  ', '\n']),
     _templateObject4 = _taggedTemplateLiteral(['\n    font-size: 5em;\n  '], ['\n    font-size: 5em;\n  ']),
     _templateObject5 = _taggedTemplateLiteral(['\n    font-size: 10em;\n  '], ['\n    font-size: 10em;\n  ']);
@@ -14531,7 +14531,7 @@ var Title = _styledComponents2.default.h1(_templateObject3, fadeIn, _Media.custo
 var Home = function Home() {
   return _react2.default.createElement(
     HomeContainer,
-    { center: true, full: true, id: '' },
+    { center: true, full: true },
     _react2.default.createElement(
       _styledFlexComponent2.default,
       { full: true, center: true },
@@ -15153,7 +15153,7 @@ var MenuBM = function (_Component) {
             { noOverlay: false, isOpen: this.state.close },
             _react2.default.createElement(
               _reactRouterDom.Link,
-              { className: 'bm-menu-item', to: '/', onClick: this.handleMenu },
+              { className: 'bm-menu-item', to: '/jinze', onClick: this.handleMenu },
               'Home'
             ),
             _react2.default.createElement(
@@ -15172,7 +15172,7 @@ var MenuBM = function (_Component) {
               'Portfolio'
             )
           ),
-          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Home2.default }),
+          _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/jinze', component: _Home2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/about', component: _About2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/resume', component: _Resume2.default }),
           _react2.default.createElement(_reactRouterDom.Route, { path: '/portfolio', component: _GetPhotosetContainer2.default })
