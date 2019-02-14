@@ -16,7 +16,7 @@ const HomeContainer = styled(Flex)`
   width: 100vw;
   height: 100vh;
   background-size: cover;
-  background-image: url('./img/home.jpg');
+  background-image: url('https://dearparanoid.github.io/jinze/img/home.jpg');
   background-position: center;
 `;;
 
@@ -33,7 +33,7 @@ const Title = styled.h1`
 `;
 
 const Home = () => (
-  <HomeContainer center full id="">
+  <HomeContainer center full >
     <Flex full center><Title>Light Always</Title></Flex>
   </HomeContainer>
 )
