@@ -14499,8 +14499,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _templateObject = _taggedTemplateLiteral(['\n  from {\n    opacity:0;\n  }\n  to {\n    opacity:1;\n  }\n'], ['\n  from {\n    opacity:0;\n  }\n  to {\n    opacity:1;\n  }\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n  width: 100vw;\n  height: 100vh;\n  background-size: cover;\n  background-image: url(\'https://dearparanoid.github.io/jinze/img/home.jpg\');\n  background-position: center;\n'], ['\n  width: 100vw;\n  height: 100vh;\n  background-size: cover;\n  background-image: url(\'https://dearparanoid.github.io/jinze/img/home.jpg\');\n  background-position: center;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n  color: #4e4e4e;\n  animation: ', ' 2s linear;\n  ', '\n\n  ', '\n'], ['\n  color: #4e4e4e;\n  animation: ', ' 2s linear;\n  ', '\n\n  ', '\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n  width: 100vw;\n  height: 100vh;\n  background-size: cover;\n  background-image: url(\'https://dearparanoid.github.io/jinze/img/home.jpg\');\n  background-position: center;\n  animation: ', ' 2s linear;\n'], ['\n  width: 100vw;\n  height: 100vh;\n  background-size: cover;\n  background-image: url(\'https://dearparanoid.github.io/jinze/img/home.jpg\');\n  background-position: center;\n  animation: ', ' 2s linear;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n  color: #4e4e4e;\n  ', '\n\n  ', '\n'], ['\n  color: #4e4e4e;\n  ', '\n\n  ', '\n']),
     _templateObject4 = _taggedTemplateLiteral(['\n    font-size: 5em;\n    text-align: center;\n  '], ['\n    font-size: 5em;\n    text-align: center;\n  ']),
     _templateObject5 = _taggedTemplateLiteral(['\n    font-size: 10em;\n  '], ['\n    font-size: 10em;\n  ']);
 
@@ -14524,9 +14524,9 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 
 var fadeIn = (0, _styledComponents.keyframes)(_templateObject);
 
-var HomeContainer = (0, _styledComponents2.default)(_styledFlexComponent2.default)(_templateObject2);;
+var HomeContainer = (0, _styledComponents2.default)(_styledFlexComponent2.default)(_templateObject2, fadeIn);
 
-var Title = _styledComponents2.default.h1(_templateObject3, fadeIn, _Media.customMedia.lessThan('tablet')(_templateObject4), _Media.customMedia.greaterThan('tablet')(_templateObject5));
+var Title = _styledComponents2.default.h1(_templateObject3, _Media.customMedia.lessThan('tablet')(_templateObject4), _Media.customMedia.greaterThan('tablet')(_templateObject5));
 
 var Home = function Home() {
   return _react2.default.createElement(
