@@ -2,16 +2,17 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
 import * as actions from './actions';
-import * as settings from 'common/settings';
-import * as utils from 'utils/utils';
+import { UserID, APIKEY } from '../../common/F_API';
+import { GET_PHOTO_LIST } from '../../common/F_Method';
+import * as utils from '../../utils/utils';
 
 function fetchAllPhotoSetsDataApi() {
 
-  const requestURL = 
+  const requestURL =
     utils.createURL({
-      method: settings.ACTION_GET_PHOTOSET_LIST,
-      api_key: settings.APIKEY,
-      user_id: settings.UserID,
+      method: GET_PHOTO_LIST,
+      api_key: APIKEY,
+      user_id: UserID,
     });
 
   return axios.get(requestURL)
@@ -19,7 +20,7 @@ function fetchAllPhotoSetsDataApi() {
     .catch(error => ({ error }));
 }
 
-function *fetchAllPhotoSetsData(action) {
+function* fetchAllPhotoSetsData(action) {
   const { response, error } = yield call(fetchAllPhotoSetsDataApi);
   if (response) {
     yield put(actions.setAllPhotoSetsData(response.data));

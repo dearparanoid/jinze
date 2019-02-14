@@ -6,7 +6,7 @@ import Home from 'content/Home';
 import About from 'content/About';
 import Resume from 'content/Resume';
 // import PortfolioSet from 'content/portfolio/PortfolioSet';
-import GetPhotosetContainer from 'container/GetPhotosetContainer';
+import GetPhotosetContainer from '../../components/container/GetPhotosetContainer';
 
 import 'menu.scss';
 

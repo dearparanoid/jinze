@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Gallery from 'react-photo-gallery';
 /** Type Check */
 import PropTypes from 'prop-types';
 
-// import Portfolio from 'presentational/Portfolio';
-import * as F_API from 'F_API';
+import * as actions from '../../store/actions';
 
 const originPhotoIdx = 8;
 const thumPhotoIdx = 4;
@@ -18,6 +19,19 @@ class GetPhotosetContainer extends Component {
     };
   }
 
+  componentWillMount() {
+    this.props.fetchAllPhotoSetsData();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+  }
+  
+
+  componentDidMount() {
+    console.log(this.props);
+  }
+  
   render() {
     if (this.state.dataReady === false) {
       return (
@@ -34,5 +48,16 @@ class GetPhotosetContainer extends Component {
   }
 }
 
-export default GetPhotosetContainer;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchAllPhotoSetsData: bindActionCreators(actions.fetchAllPhotoSetsData, dispatch),
+  }
+}
 
+const mapStateToProps = (state) => {
+  return {
+    photoSet: state.photoSet,
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(GetPhotosetContainer);
