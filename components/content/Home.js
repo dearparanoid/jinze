@@ -1,16 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Flex from 'styled-flex-component';
-import { customMedia } from '../helper/Media';
-
-const fadeIn = keyframes`
-  from {
-    opacity:0;
-  }
-  to {
-    opacity:1;
-  }
-`;
+import { customMedia, fadeIn } from '../helper/Media';
 
 const HomeContainer = styled(Flex)`
   width: 100vw;
