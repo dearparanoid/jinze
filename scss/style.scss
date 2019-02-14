@@ -7,25 +7,6 @@ body {
     overflow-x: hidden;
 }
 
-.homeTitle {
-    display: block;
-    position: absolute;
-    text-align: center;
-    .homeImg {
-        position: fixed;
-        display: block;
-        height: 105vh;
-        width: auto;
-    }
-    h1 {
-        position: fixed;
-        width:100vw;
-        top:27vh;
-        font-size: 10em;
-        color: grey;
-    }
-}
-
 .portfolioTitle{
     display: block;
     position: absolute;
