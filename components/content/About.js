@@ -56,7 +56,7 @@ const ImgContainer = styled(Flex)`
     height: auto;
     padding-top: 0;
     cursor: pointer;
-    ${customMedia.lessThan('tablet')`
+    ${customMedia.greaterThan('tablet')`
       width: 50vw;
     `}  
     ${customMedia.lessThan('tablet')`
