@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FaInstagram from 'react-icons/lib/fa/instagram';
 import FaFlickr from 'react-icons/lib/fa/flickr';
 import FaWordpress from 'react-icons/lib/fa/wordpress';
 import FaGithub from 'react-icons/lib/fa/github';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
-import { customMedia, fadeIn } from '../helper/Media';
+import { customMedia } from '../helper/Media';
 
 import about from 'about.jpg';
 import 'about.scss';
@@ -50,10 +50,6 @@ const TextWrapper = styled.div`
 `;
 
 const ImgContainer = styled(Flex)`
-  &:hover > ${TextContainer} {
-    display: block;
-    animation: ${fadeIn} 1s linear;
-  }
   img {
     display: block;
     position: relative;
@@ -103,7 +99,6 @@ const About = (props) => (
     <LayoutBlock />
     <ImgContainer column center>
       <img src={about} alt="" />
-      {renderAboutText()}
     </ImgContainer>
     <SocialLinkContainer justifyAround alignCenter>
       <SocialLink href="https://www.instagram.com/gogogohuang" target="_blank" rel="noopener noreferrer"><FaInstagram size={28} /></SocialLink>
@@ -111,6 +106,7 @@ const About = (props) => (
       <SocialLink href="https://jzhuangblog.wordpress.com/" target="_blank" rel="noopener noreferrer"><FaWordpress size={28} /></SocialLink>
       <SocialLink href="https://github.com/dearparanoid/" target="_blank" rel="noopener noreferrer"><FaGithub size={28} /></SocialLink>
     </SocialLinkContainer>
+    {renderAboutText()}
   </Container>
 )
 
