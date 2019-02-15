@@ -53,11 +53,13 @@ const ImgContainer = styled(Flex)`
   img {
     display: block;
     position: relative;
+    width: 100%;
     height: auto;
     padding-top: 0;
     cursor: pointer;
     ${customMedia.greaterThan('tablet')`
       width: 50vw;
+      min-width: 720px
     `}  
     ${customMedia.lessThan('tablet')`
       width: 75vw;
@@ -69,6 +71,7 @@ const SocialLinkContainer = styled(Flex)`
   margin: 1em auto;
   ${customMedia.greaterThan('tablet')`
     width: 10%;
+    min-width: 140px;
   `}
   ${customMedia.lessThan('tablet')`
     width: 50%;
