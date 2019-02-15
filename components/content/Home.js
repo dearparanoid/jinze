@@ -3,11 +3,13 @@ import styled, { keyframes } from 'styled-components';
 import Flex from 'styled-flex-component';
 import { customMedia, fadeIn } from '../helper/Media';
 
+import home from 'home.jpg';
+
 const HomeContainer = styled(Flex)`
   width: 100vw;
   height: 100vh;
   background-size: cover;
-  background-image: url('https://dearparanoid.github.io/jinze/img/home.jpg');
+  background-image: url(${home});
   background-position: center;
   animation: ${fadeIn} 2s linear;
 `;

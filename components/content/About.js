@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import FaInstagram from 'react-icons/lib/fa/instagram';
 import FaFlickr from 'react-icons/lib/fa/flickr';
 import FaWordpress from 'react-icons/lib/fa/wordpress';
 import styled from 'styled-components';
 import Flex from 'styled-flex-component';
-import { customMedia, fadeIn } from '../helper/Media';
+import { customMedia } from '../helper/Media';
 
 import about from 'about.jpg';
 import 'about.scss';
@@ -17,20 +17,12 @@ const Container = styled(Flex)`
 `;
 
 const TextContainer = styled.div`
-  position: absolute;
-  top: 20%;
-  display: none;
   font-size: 1.5em;
   font-weight: bold;
-  color: lightgray;
-  text-shadow: 1px 1px 1em lightgray;
+  color: #4e4e4e;
 `;
 
 const ImgContainer = styled(Flex)`
-  &:hover > ${TextContainer} {
-    display: block;
-    animation: ${fadeIn} 1s linear;
-  }
   img {
     display: block;
     position: relative;
@@ -56,8 +48,6 @@ const SocialLink = styled.a`
   text-decoration: none;
 `;
 
-
-
 const renderAboutText = () => (
   <TextContainer>
     {ABOUT.map((text, id, arr) => ((id !== arr.length - 1) ? `${text}/` : `${text}`))}
@@ -68,13 +58,13 @@ const About = (props) => (
   <Container column center>
     <ImgContainer column center>
       <img src={about} alt="" />
-      {renderAboutText()}
     </ImgContainer>
     <SocialLinkContainer justifyAround alignCenter>
       <SocialLink href="https://www.instagram.com/gogogohuang" target="_blank" rel="noopener noreferrer"><FaInstagram size={28} /></SocialLink>
       <SocialLink href="https://www.flickr.com/gogogohuang" target="_blank" rel="noopener noreferrer"><FaFlickr size={28} /></SocialLink>
       <SocialLink href="https://jzhuangblog.wordpress.com/" target="_blank" rel="noopener noreferrer"><FaWordpress size={28} /></SocialLink>
     </SocialLinkContainer>
+    {renderAboutText()}
   </Container>
 )
 
