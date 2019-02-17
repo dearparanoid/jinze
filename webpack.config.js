@@ -16,7 +16,8 @@ module.exports = {
       },
       { test: /\.(png|jpg|gif)$/, loader: 'url-loader' },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
-      { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' }
+      { test: /\.scss$/, loader: 'style-loader!css-loader!sass-loader' },
+      { test: /\.svg$/, loader: 'svg-inline-loader' }
     ]
   },
   devServer: {

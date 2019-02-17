@@ -1,81 +1,47 @@
 
-import React, { Component } from 'react';
-/** Type Check */
-import PropTypes from 'prop-types';
+import React, { PureComponent } from 'react';
+import styled from 'styled-components';
+import Flex from 'styled-flex-component';
+import IconReact from 'react-devicon/react/original';
+import IconJavascript from 'react-devicon/javascript/original';
+import IconNodejs from 'react-devicon/nodejs/original';
+import IconC from 'react-devicon/c/original';
+import IconWebpack from 'react-devicon/webpack/original';
+import IconCss3 from 'react-devicon/css3/original';
+import IconSass from 'react-devicon/sass/original';
+import IconHtml5 from 'react-devicon/html5/original';
 
-class ResumeSkill extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: this.props.data,
-    };
-    this.getSkillLan = this.getSkillLan.bind(this);
-    this.getSkillTool = this.getSkillTool.bind(this);
-    /** dirty code */
-    this.getSkillItem = this.getSkillItem.bind(this);
-    /** end */
-  }
+const Container = styled(Flex)`
+  width: 100%;
+`;
 
-  componentWillMount() { }
+const InnerContainer = styled(Flex)``;
 
-  componentDidMount() { }
+const SvgContainer = styled(Flex)`
+  width: 100%;
+`;
 
-  shouldComponentUpdate() {
-    return true;
-  }
+const SvgWrapper = styled.div`
+  margin: 0 0.5em;
+`;
 
-  componentWillUpdate() { }
-
-  componentWillUnmount() { }
-
-  getSkillLan() {
-    const skillBlock =
-    this.state.data.language.map((ele) => {
-      return this.getSkillItem(ele);
-    });
-
-    return skillBlock;
-  }
-
-  getSkillTool() {
-    const skillBlock =
-    this.state.data.tool.map((ele) => {
-      return this.getSkillItem(ele);
-    });
-
-    return skillBlock;
-  }
-  getSkillItem(ele) {
-    return <li style={{ whiteSpace: 'nowrap' }} key={ele}>{ele}</li>;
-  }
-
+export default class ResumeSkill extends PureComponent {
   render() {
-    /** ToDo - a new way to dispaly all information with one func */
     return (
-      <div className="resume-skill">
-        <div className="skill-block">
-          <h4>Language</h4>
-          <div className="skill-content">{this.getSkillLan()}</div>
-        </div>
-        <div className="skill-block">
-          <h4>Tool</h4>
-          <div className="skill-content">
-            <ul style={{ overflow: 'auto', marginTop: 0 }}>
-              {this.getSkillTool()}
-            </ul>
-          </div>
-        </div>
-      </div>
+      <Container column justifyStart alignCenter>
+        <InnerContainer column style={{ width: '100%' }}>
+          <h3>Programming Language</h3>
+          <SvgContainer>
+            <SvgWrapper><IconJavascript width={'3em'} height={'3em'} /></SvgWrapper>
+            <SvgWrapper><IconReact width={'3em'} height={'3em'} /></SvgWrapper>
+            <SvgWrapper><IconNodejs width={'3em'} height={'3em'} /></SvgWrapper>
+            <SvgWrapper><IconHtml5 width={'3em'} height={'3em'} /></SvgWrapper>
+            <SvgWrapper><IconSass width={'3em'} height={'3em'} /></SvgWrapper>
+            <SvgWrapper><IconCss3 width={'3em'} height={'3em'} /></SvgWrapper>
+            <SvgWrapper><IconC width={'3em'} height={'3em'} /></SvgWrapper>
+          </SvgContainer>
+        </InnerContainer>
+      </Container>
     );
   }
 }
-
-
-ResumeSkill.propTypes = {
-  data: PropTypes.object.isRequired,
-};
-
-ResumeSkill.defaultProps = {
-
-};
-export default ResumeSkill;

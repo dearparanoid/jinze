@@ -12,19 +12,6 @@ class ResumeSection extends Component {
     };
   }
 
-  componentWillMount() {
-  }
-
-  componentDidMount() { }
-
-  shouldComponentUpdate() {
-    return true;
-  }
-
-  componentWillUpdate() { }
-
-  componentWillUnmount() { }
-
   renderJobDes() {
     const jobDes =
     this.state.data.data.jobDesc.map((x) => {

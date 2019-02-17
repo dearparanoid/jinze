@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import styled from 'styled-components';
 
-import MenuBM from './menu/MenuBM';
+//import MenuBM from './menu/MenuBM';
+import Navbar from './Navbar';
 
 import 'style.scss';
 
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Raleway');
@@ -16,21 +18,23 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const Container = styled.div`
+  width: 100vw;
+  position: relative;
+`;
+
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      close: false,
-    };
   }
 
   render() {
     return (
       <BrowserRouter>
-        <div>
+        <Container>
           <GlobalStyle />
-          <MenuBM />
-        </div>
+          <Navbar />
+        </Container>
       </BrowserRouter>
     );
   }

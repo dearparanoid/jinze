@@ -7,8 +7,6 @@ class GetPhotoset extends PureComponent {
   }
 
   render = () => {
-    const {titlte,}
-
     return (
       <div className="portfolioTitle">
         <h1>{this.state.data.photoset.title}</h1>

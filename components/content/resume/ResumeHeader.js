@@ -1,37 +1,44 @@
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import styled from 'styled-components';
+import Flex from 'styled-flex-component';
 
-class ResumeHeader extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      data: this.props,
-    };
+import Smartphone from '@material-ui/icons/Smartphone';
+import Email from '@material-ui/icons/Email';
+
+const UList = styled.ul`
+  list-style-type: none;
+  padding-left: 1em;
+  li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.3em 0;
+    text-align: left;
   }
+`;
 
-  componentWillMount() { }
-
-  componentDidMount() { }
-
-  shouldComponentUpdate() {
-    return true;
+const SvgContainer = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-right: 0.5em;
+  .svg{
+    margin: 0 auto;
+    display: block;
   }
+`;
 
-  componentWillUpdate() { }
-
-  componentWillUnmount() { }
-
+export default class ResumeHeader extends PureComponent {
   render() {
     return (
-      <div className={this.state.data.class}>
-        <h1> Huang JinZe </h1>
-        <ul style={{ listStyleType: 'none', paddingLeft: '20px' }}>
-          <li> phone: +886 921671393</li>
-          <li> email: gogogohuang@gmail.com </li>
-        </ul>
-      </div>
+      <Flex style={{width: '100%'}} justifyBetween alignCenter>
+        <h2> Huang JinZe </h2>
+        <UList>
+          <li><SvgContainer><Smartphone /></SvgContainer>+886 921671393</li>
+          <li><SvgContainer><Email /></SvgContainer>gogogohuang@gmail.com</li>
+        </UList>
+      </Flex>
     );
   }
 }
-
-export default ResumeHeader;

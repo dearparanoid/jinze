@@ -1,89 +1,58 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import styled from 'styled-components';
+import Flex, { FlexItem } from 'styled-flex-component';
+import Paper from '@material-ui/core/Paper';
 
-import ResumeHeader from 'content/resume/ResumeHeader';
-import ResumeSection from 'content/resume/ResumeSection';
-import ResumeSkill from 'content/resume/ResumeSkill';
+import ResumeHeader from './resume/ResumeHeader';
+import ResumeSection from './resume/ResumeSection';
+import ResumeSkill from './resume/ResumeSkill';
+import { pSkill } from '../../common/Resume';
 
-import 'resume.scss';
+import home from 'home.jpg';
 
-class Resume extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+import './resume/_resume.scss';
 
-  componentWillMount() {
+const Conatiner = styled.div`
+  width: 100%;
+  min-height: 100vh;
+  height: max-content;
+  padding-top: 5em;
+  background-size: cover;
+  background-image: url(${home});
+  background-position: center;
+`;
 
-  }
+const BoxContainer = styled(Paper)`
+  border: 1px solid #4e4e4e;
+  border-radius: 0.25em;
+  width: 75%;
+  margin: 0 auto;
+  padding: 2.5em;
+`;
 
-  componentDidMount() {
+const ResumeHeaderContainer = styled(Flex)`
+  flex-direction: column;
+`;
 
-  }
-
-  shouldComponentUpdate() {
-    return true;
-  }
-
-  componentWillUpdate() {
-
-  }
-
-  componentWillUnmount() {
-
-  }
-
+export default class Resume extends PureComponent {
   render() {
-    /** should get data from server */
-    const tripMomentJob = {
-      title: 'F2E Engineer',
-      company: 'TripMoment Inc.',
-      date: '2017/11 ~ Now',
-      product: 'tripmoment.com/melovetravel.com',
-      jobDesc: ['website development'],
-    };
-    const etherwanJob = {
-      title: 'Senoir Software Engineer',
-      company: 'EtherWAN System Inc.',
-      date: '2017/3 ~ 2017/11',
-      product: 'Network Management System',
-      jobDesc: ['Topology', 'UI Revision', 'Adapt GitLab'],
-    };
-    const moxaJob = {
-      title: 'Secured Router Software Engineer',
-      company: 'MOXA Inc.',
-      date: '2013/9 ~ 2016/6',
-      product: 'Secured Router',
-      jobDesc: ['ABC02 Porting', 'Transparent Filrewall', 'Mess Configure', 'Account Ehancement', 'OpenVPN porting', 'UI/UX Improvement'],
-    };
-    const pSkill = {
-      language: ['Javascript', 'React', 'Sass', 'HTML', 'CSS', 'React-Native', 'Node.js'],
-      tool: ['Webpack', 'Adobe Lightroom'],
-    };
+
     /** end */
     return (
-      <div className="content">
-        <div className="resume">
-          <ResumeHeader class={'resume-header'} />
-          <div className="resume-section">
-            <h2> Summary </h2>
-            <p> I am major in JavaScript, especially React.
-             Now I am F2E engineer in TripMoment Inc. </p>
-          </div>
-          <div className="resume-section">
-            <h2> Skill </h2>
-            <ResumeSkill data={pSkill} />
-          </div>
-          <div className="resume-section">
+      <Conatiner>
+        <BoxContainer elevation={2}>
+          <ResumeHeaderContainer column justifyStart alignCenter>
+            <ResumeHeader />
+          </ResumeHeaderContainer>
+          <ResumeSkill data={pSkill} />
+          {/*<div className="resume-section">
             <h2> Work Experience </h2>
             <ResumeSection data={tripMomentJob} />
             <ResumeSection data={etherwanJob} />
             <ResumeSection data={moxaJob} />
-          </div>
-        </div>
-      </div>
+          </div> */}
+        </BoxContainer>
+      </Conatiner>
     );
   }
 }
-
-export default Resume;

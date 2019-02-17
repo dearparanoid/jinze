@@ -1,18 +1,14 @@
+$font-color: #4e4e4e;
 
-.portfolioTitle{
-    display: block;
-    position: absolute;
-    text-align: center;
-    width: 100vw;
-    top: 5%;
-    h1 {
-        margin: 0 auto;
-        font-size: 7em;
-        color: grey;
-    }
+.fixed_top{
+  position: fixed;
+  top: 0;
 }
 
-.content {
-    position: relative;
-    padding-top: 75px;
+.font_color_4e { 
+  color: $font-color;
+}
+
+.remove_decoration {
+  text-decoration: none;
 }
