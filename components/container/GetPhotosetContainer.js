@@ -1,49 +1,46 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import Gallery from 'react-photo-gallery';
-/** Type Check */
-import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Flex from 'styled-flex-component';
+import isEmpty from 'lodash/isEmpty';
+
+import GetPhotosContainer from './GetPhotosContainer';
 
 import * as actions from '../../store/actions';
 
-const originPhotoIdx = 8;
-const thumPhotoIdx = 4;
+const _ = {
+  isEmpty
+};
+
+const Container = styled(Flex)`
+  width: 82.5vw;
+  padding-top: 75px;
+  margin: 0 auto;
+`;
 
 class GetPhotosetContainer extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      dataReady: false,
-    };
   }
 
   componentWillMount() {
     this.props.fetchAllPhotoSetsData();
   }
 
-  componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
-  }
-  
-
-  componentDidMount() {
-    console.log(this.props);
-  }
-  
   render() {
-    if (this.state.dataReady === false) {
+    if (_.isEmpty(this.props.photoSet)) {
       return (
-        <div className="homeTitle">
+        <Container>
           <h1>Data Fetching...</h1>
-        </div>);
+        </Container>
+      );
     }
 
-    console.log(this.state);
-
     return (
-      <div >gogog</div>
+      <Container>
+        <GetPhotosContainer photoset_id={this.props.photoSet.allPhotoSets.photoset[1].id} />
+      </Container>
     );
   }
 }
