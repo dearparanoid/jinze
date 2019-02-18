@@ -31,7 +31,7 @@ class GetPhotosContainer extends PureComponent {
   render() {
 
     return (
-      <div >gogog</div>
+      <div>working</div>
     );
   }
 }
