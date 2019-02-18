@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
-import Flex, { FlexItem } from 'styled-flex-component';
+import Flex from 'styled-flex-component';
 import Paper from '@material-ui/core/Paper';
 
+import { customMedia } from '../helper/Media';
 import ResumeHeader from './resume/ResumeHeader';
 import ResumeSection from './resume/ResumeSection';
 import ResumeSkill from './resume/ResumeSkill';
@@ -28,18 +29,29 @@ const BoxContainer = styled(Paper)`
   width: 75%;
   margin: 0 auto;
   padding: 2.5em;
+  ${customMedia.lessThan('tablet')`
+    width: 85%;
+    padding: 1em;
+  `}
 `;
 
 const ResumeHeaderContainer = styled(Flex)`
   flex-direction: column;
 `;
 
+const LayoutBlock = styled.div`
+  display: none;
+  ${customMedia.lessThan('tablet')`
+    display: block;
+    height: 20vh;
+  `}
+`;
+
 export default class Resume extends PureComponent {
   render() {
-
-    /** end */
     return (
       <Conatiner>
+        <LayoutBlock />
         <BoxContainer elevation={2}>
           <ResumeHeaderContainer column justifyStart alignCenter>
             <ResumeHeader />

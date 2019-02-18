@@ -34,7 +34,7 @@ const TextContainer = styled(Flex)`
   `}
   ${customMedia.lessThan('tablet')`
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
   `}  
@@ -44,9 +44,6 @@ const TextWrapper = styled.div`
   font-size: 1.5em;
   font-weight: bold;
   color: #4e4e4e;
-  ${customMedia.lessThan('tablet')`
-    margin: 0.5em auto;
-  `}  
 `;
 
 const ImgContainer = styled(Flex)`
@@ -87,7 +84,7 @@ const LayoutBlock = styled.div`
   display: none;
   ${customMedia.lessThan('tablet')`
     display: block;
-    height: 100px;
+    height: 25vh;
   `}
 `;
 

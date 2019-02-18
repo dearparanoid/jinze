@@ -2,7 +2,9 @@
 import React, { PureComponent } from 'react'
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Flex, { FlexItem } from 'styled-flex-component';
+import Flex from 'styled-flex-component';
+
+import { customMedia } from './helper/Media';
 
 import _navbar from './_navbar.scss';
 
@@ -19,6 +21,9 @@ const NavContainer = styled.nav`
 const InnerContainer = styled(Flex)`
   height: 100%;
   margin: 0 2em;
+  ${customMedia.lessThan('tablet')`
+    margin: 0 1em;
+  `}
 `;
 
 const NavItemContainer = styled(Flex)`
@@ -29,6 +34,9 @@ const NavItem = styled.div`
   font-size: 1em;
   margin: 0 0.75em;
   text-align: center;
+  ${customMedia.lessThan('tablet')`
+  margin: 0 0.5em;
+  `}
 `;
 
 export default class Navbar extends PureComponent {

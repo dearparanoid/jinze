@@ -11,6 +11,9 @@ import IconCss3 from 'react-devicon/css3/original';
 import IconSass from 'react-devicon/sass/original';
 import IconHtml5 from 'react-devicon/html5/original';
 
+import { customMedia } from '../../helper/Media';
+
+
 const Container = styled(Flex)`
   width: 100%;
 `;
@@ -31,7 +34,7 @@ export default class ResumeSkill extends PureComponent {
       <Container column justifyStart alignCenter>
         <InnerContainer column style={{ width: '100%' }}>
           <h3>Programming Language</h3>
-          <SvgContainer>
+          <SvgContainer wrap>
             <SvgWrapper><IconJavascript width={'3em'} height={'3em'} /></SvgWrapper>
             <SvgWrapper><IconReact width={'3em'} height={'3em'} /></SvgWrapper>
             <SvgWrapper><IconNodejs width={'3em'} height={'3em'} /></SvgWrapper>
